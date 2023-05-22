@@ -1,0 +1,4 @@
+mailhog/logs
+src
+.env
+.DS_Store

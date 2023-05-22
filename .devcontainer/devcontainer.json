@@ -1,0 +1,77 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Node.js project",
+  "remoteUser": "node",
+  // Use Docker Compose file when container starts.
+  "dockerComposeFile": "../docker-compose.yml",
+  // Docker Compose service to start as Dev container.
+  "service": "app",
+  // work directory
+  "workspaceFolder": "/app",
+  // vscode settings
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.insertFinalNewline": true,
+        "workbench.iconTheme": "material-icon-theme",
+        "material-icon-theme.activeIconPack": "react",
+        // TODO highlight
+        "todohighlight.keywords": [
+            {
+                "text": "TODO:",
+                "backgroundColor": "mediumvioletred"
+            },
+            {
+                "text": "HACK:",
+                "backgroundColor": "mediumblue"
+            },
+            {
+                "text": "NOTE:",
+                "backgroundColor": "sienna"
+            },
+            {
+                "text": "XXX:",
+                "backgroundColor": "dimgray"
+            },
+            {
+                "text": "FIXME:",
+                "backgroundColor": "darkolivegreen"
+            }
+        ],
+        "todohighlight.defaultStyle": {
+            "color": "white",
+            "backgroundColor": "#ffab00",
+            "cursor": "pointer",
+            "isWholeLine": true
+        },
+
+        "[json]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[typescriptreact]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "editor.codeActionsOnSave": [
+            // Add missing imports at save
+            "source.addMissingImports",
+            // Remove unused import at save
+            "source.fixAll.eslint"
+        ]
+      },
+      "extensions": [
+        "donjayamanne.githistory",
+        "alefragnani.Bookmarks",
+        "dbaeumer.vscode-eslint",
+        "PKief.material-icon-theme",
+        "esbenp.prettier-vscode",
+        "wayou.vscode-todo-highlight"
+      ]
+    }
+  }
+}
